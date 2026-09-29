@@ -409,9 +409,9 @@ namespace patterns {
 		"client.dll:>E8????????488B8398010000");
 
 	const ::protection::addresses::address_t& prediction_player = ADDRESS_IMPL(
-		::protection::addresses::hash("client.dll:488B4338488905*????????4183FC03"),
+		::protection::addresses::hash("client.dll:4C8935*????????83FD03"),
 		::protection::addresses::address_type::pattern,
-		"client.dll:488B4338488905*????????4183FC03");
+		"client.dll:4C8935*????????83FD03");
 
 	const ::protection::addresses::address_t& prediction_process_movement = ADDRESS_IMPL(
 		::protection::addresses::hash("client.dll:8BC5498BD5488BCB>E8????????488B034C8BC5"),
@@ -553,10 +553,10 @@ namespace patterns {
 		::protection::addresses::address_type::pattern,
 		"client.dll:>E8????????4C39B5C8140000");
 
-	const ::protection::addresses::address_t& simulation_player = ADDRESS_IMPL(
-		::protection::addresses::hash("client.dll:4C3905*????????410F94C6"),
-		::protection::addresses::address_type::pattern,
-		"client.dll:4C3905*????????410F94C6");
+	// Build 14186 dump exposes the prediction-player global but no separate
+	// simulation-player global. Keep both users of the prediction state on the
+	// same current pointer rather than failing global-address initialization.
+	const ::protection::addresses::address_t& simulation_player = prediction_player;
 
 	const ::protection::addresses::address_t& sort_primitives = ADDRESS_IMPL(
 		::protection::addresses::hash("scenesystem.dll:4585C90F84????????5556574883EC30"),

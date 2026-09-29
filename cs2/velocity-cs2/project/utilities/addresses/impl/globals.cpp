@@ -39,8 +39,8 @@ namespace addresses::globals {
 		weapon_recoil_data     = PATTERN (patterns::weapon_recoil_data);
 		hud                    = PATTERN (patterns::hud);
 		prediction_seed        = PATTERN (patterns::prediction_seed);
-		simulation_player      = PATTERN (patterns::simulation_player);
 		prediction_player      = PATTERN (patterns::prediction_player);
+		simulation_player      = PATTERN (patterns::simulation_player);
 		planted_c4             = PATTERN (patterns::planted_c4);
 		item_system            = PATTERN (patterns::item_system);
 		frame_input_ring_idx   = PATTERN (patterns::frame_input_ring_idx);
